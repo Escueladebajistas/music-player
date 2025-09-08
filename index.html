@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Reproductor Local</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app">
+    <header>
+      <h1>🎵 Reproductor Local</h1>
+      <p>Selecciona canciones desde tu dispositivo y reprodúcelas (funciona offline).</p>
+    </header>
+
+    <main>
+      <label class="file-label">➕ Agregar canciones
+        <input id="fileInput" type="file" accept="audio/*" multiple>
+      </label>
+
+      <div id="nowPlaying" class="now-playing">Sin pista</div>
+
+      <div class="player">
+        <audio id="audio" controls class="audio"></audio>
+      </div>
+
+      <div class="skip-control">
+        <label>Saltar (segundos): 
+          <input id="skipInput" type="number" min="1" max="30" value="5">
+        </label>
+      </div>
+
+      <div id="playlist" class="playlist"></div>
+    </main>
+
+    <footer><small>Consejo: puedes arrastrar y soltar archivos también (en escritorio).</small></footer>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
