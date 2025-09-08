@@ -22,7 +22,7 @@ jobs:
         run: npm install
 
       - name: Package app for Windows (.exe y .zip)
-        run: npx electron-builder --win nsis zip
+        run: npx electron-builder --win nsis zip --publish never
 
       - name: Upload installer (.exe y .zip)
         uses: actions/upload-artifact@v4
