@@ -10,25 +10,25 @@ jobs:
     runs-on: windows-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v4
 
       - name: Set up Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: "18"
+          node-version: 18
 
       - name: Install dependencies
         run: npm install
 
       - name: Build app
-        run: npm run build --if-present
+        run: npm run build
 
-      - name: Package app
-        run: npx electron-builder --win portable
+      - name: Package app for Windows (.exe y .zip)
+        run: npx electron-builder --win nsis zip
 
-      - name: Upload artifact
-        uses: actions/upload-artifact@v3
+      - name: Upload installer (.exe y .zip)
+        uses: actions/upload-artifact@v4
         with:
-          name: MusicPlayer-windows-portable
-          path: dist/*.exe
+          name: music-player-win
+          path: dist/*
