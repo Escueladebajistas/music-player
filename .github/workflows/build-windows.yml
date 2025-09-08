@@ -21,9 +21,6 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Build app
-        run: npm run build
-
       - name: Package app for Windows (.exe y .zip)
         run: npx electron-builder --win nsis zip
 
